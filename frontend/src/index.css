@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Reset to prevent overlays */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure no elements create unwanted overlays */
+html, body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+    /* Prevent any unwanted overlays */
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Ensure main content is properly positioned */
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Fix any potential overlay issues */
+  .overlay-fix {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ensure content sections don't overlap */
+  .content-section {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 text-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-lg transition-colors duration-200 text-lg;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 border border-gray-200;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg text-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .table-header {
+    @apply px-6 py-4 text-left text-lg font-semibold text-gray-700 bg-gray-50;
+  }
+  
+  .table-cell {
+    @apply px-6 py-4 text-lg text-gray-900 border-b border-gray-200;
+  }
+
+  /* Dashboard specific fixes */
+  .dashboard-container {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+  }
+
+  .dashboard-section {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+  }
+
+  /* Ensure charts don't create overlays */
+  .chart-container {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+  }
+
+  /* Fix for any potential absolute positioned elements */
+  .absolute-fix {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Specific fix for the overlay issue */
+  .overlay-prevention {
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure all dashboard elements are properly positioned */
+  .dashboard-element {
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: visible !important;
+  }
+}
+
+/* Global overlay prevention */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure no elements create unwanted overlays */
+.overlay-prevention {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Fix for any elements that might be positioned incorrectly */
+.position-fix {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Fix for any potential black overlays */
+.black-overlay-fix {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure all content is visible */
+.content-visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Additional overlay prevention */
+.no-overlay {
+  position: relative !important;
+  z-index: 1 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+
+/* Fix for any potential floating elements */
+.floating-fix {
+  position: relative !important;
+  z-index: 1 !important;
+  float: none !important;
+}
+
+/* Ensure proper stacking context */
+.stack-context {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+}
